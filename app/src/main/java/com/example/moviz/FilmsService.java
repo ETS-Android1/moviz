@@ -10,7 +10,7 @@ import retrofit2.http.Query;
 public interface FilmsService {
 
     public static final String ENDPOINT = "https://api.themoviedb.org/3/movie/";
-    public static int PAGE=3;
+    public static int PAGE=1;
     public static String API_KEY ="cc7910d91f67906ede8d5894df4d4894";
     public static String LANGUAGE="en-US";
     @GET("popular")
