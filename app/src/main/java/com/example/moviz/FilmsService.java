@@ -21,7 +21,7 @@ public interface FilmsService {
     );
 
     @GET("{movie_id}")
-    Call<FilmInfosList> searchMovieDetails(
+    Call<FilmInfos> searchMovieDetails(
             @Path("movie_id") int movie_id,
             @Query("api_key") String api_key,
             @Query("language") String language,

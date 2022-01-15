@@ -4,12 +4,12 @@ import java.util.List;
 
 public class FilmInfos {
     private String backdrop_path;
+    private List<Genres> genres;
     private String overview;
     private String release_date;
-    private String title;
 
-    public String getBackdrop_path() {
-        return backdrop_path;
+    public List<Genres> getGenres() {
+        return genres;
     }
 
     public String getOverview() {
@@ -20,7 +20,7 @@ public class FilmInfos {
         return release_date;
     }
 
-    public String getTitle() {
-        return title;
+    public String getBackdrop_path() {
+        return backdrop_path;
     }
 }

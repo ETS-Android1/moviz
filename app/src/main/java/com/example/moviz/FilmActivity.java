@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class FilmActivity  extends AppCompatActivity {
     private FilmsService filmsService;
     private ImageView imageDescription;
-    private FilmInfosList filmInfosList;
+    private FilmInfos filmInfos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,20 +32,25 @@ public class FilmActivity  extends AppCompatActivity {
                 .build()
                 .create(FilmsService.class);
 
-        Call<FilmInfosList> call = filmsService.searchMovieDetails(id,filmsService.API_KEY,filmsService.LANGUAGE,filmsService.PAGE);
-        call.enqueue(new Callback<FilmInfosList>(){
+        Call<FilmInfos> call = filmsService.searchMovieDetails(id,filmsService.API_KEY,filmsService.LANGUAGE,filmsService.PAGE);
+        call.enqueue(new Callback<FilmInfos>(){
             @Override
-            public void onResponse(Call<FilmInfosList> call, Response<FilmInfosList> response) {
+            public void onResponse(Call<FilmInfos> call, Response<FilmInfos> response) {
                 if(!response.isSuccessful() ){
                     Log.i("ERROR CODE",String.valueOf(response.code()));
                     return;
                 }
-                filmInfosList = response.body();
-                Log.i("INFOS", String.valueOf(filmInfosList.getSize()));
-                //Log.i("INFOS",filmInfosList.getFilmInfos(0).getBackdrop_path());
+                filmInfos = response.body();
+                Glide.with(FilmActivity.this).load("https://image.tmdb.org/t/p/original"+filmInfos.getBackdrop_path()).into(imageDescription);
+                
+
+
+
+
+
             }
             @Override
-            public void onFailure(Call<FilmInfosList> call, Throwable t) {
+            public void onFailure(Call<FilmInfos> call, Throwable t) {
                 Log.i("ON FAILURE",t.getMessage());
             }
         });
