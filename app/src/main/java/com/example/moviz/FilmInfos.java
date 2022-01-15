@@ -7,6 +7,11 @@ public class FilmInfos {
     private List<Genres> genres;
     private String overview;
     private String release_date;
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
 
     public List<Genres> getGenres() {
         return genres;

@@ -59,8 +59,8 @@ public class UpcomingActivity extends AppCompatActivity {
                 .build()
                 .create(FilmsService.class);
 
-        Call<FilmsList> call = filmsService.searchPopularMovies(filmsService.API_KEY,filmsService.LANGUAGE,filmsService.PAGE);
-        
+        Call<FilmsList> call = filmsService.searchUpcomingMovies(filmsService.API_KEY,filmsService.LANGUAGE,filmsService.PAGE);
+
         call.enqueue(new Callback<FilmsList>(){
             @Override
             public void onResponse(Call<FilmsList> call, Response<FilmsList> response) {
@@ -70,8 +70,8 @@ public class UpcomingActivity extends AppCompatActivity {
                 }
                 filmsList = response.body();
                 RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
-                RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(filmsList,MainActivity.this);
-                myrv.setLayoutManager(new GridLayoutManager(MainActivity.this,2));
+                RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(filmsList,UpcomingActivity.this);
+                myrv.setLayoutManager(new GridLayoutManager(UpcomingActivity.this,2));
                 myrv.setAdapter(myAdapter);
 
             }

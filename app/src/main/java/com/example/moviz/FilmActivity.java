@@ -27,7 +27,6 @@ public class FilmActivity  extends AppCompatActivity {
     private TextView filmDescription;
     private TextView filmDate;
     private TextView filmGenres;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +64,7 @@ public class FilmActivity  extends AppCompatActivity {
                     filmGenresString = filmGenresString + "&#8226; "+filmInfos.getGenres().get(i).getName()+"<br/>";
                 }
                 filmGenres.setText(Html.fromHtml(filmGenresString));
+                FilmActivity.this.setTitle(filmInfos.getTitle());
             }
             @Override
             public void onFailure(Call<FilmInfos> call, Throwable t) {
