@@ -12,9 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Moviz">
         <activity
+            android:label="@string/upcoming_movies"
+            android:name=".UpcomingActivity"
+            android:exported="false" />
+        <activity
             android:name=".FilmActivity"
             android:exported="false" />
         <activity
+            android:label="@string/popular_movies"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

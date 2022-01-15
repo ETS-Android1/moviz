@@ -43,19 +43,21 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/text_popular"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_popular"
                 android:id="@+id/text_popular"
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Popular"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_upcoming"
             android:background="@android:color/holo_blue_dark"
             android:layout_gravity="fill"
             android:layout_columnWeight="1"
@@ -63,21 +65,24 @@
             android:padding="5dp"
             android:layout_rowWeight="1">
             <ImageView
+                app:tint="@color/gray"
                 android:id="@+id/image_upcoming"
                 android:src="@drawable/new_image"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/text_upcoming"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
+
+                android:textColor="@color/gray"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_upcoming"
                 android:id="@+id/text_upcoming"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Popular"/>
+                android:text="Upcoming"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
